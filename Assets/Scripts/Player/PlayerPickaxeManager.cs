@@ -1,48 +1,58 @@
 using UnityEngine;
 
 /// <summary>
-/// Manages equipped pickaxe and mining power.
+/// Handles pickaxe equipment and provides gameplay values.
 /// </summary>
 public class PlayerPickaxeManager : MonoBehaviour
 {
-    [SerializeField] private PickaxeData woodPickaxe;
-    [SerializeField] private PickaxeData stonePickaxe;
-    [SerializeField] private PickaxeData ironPickaxe;
+    [Header("Current Pickaxe")]
+    [SerializeField] private PickaxeData currentPickaxe;
 
-    private PickaxeData currentPickaxe;
+    [Header("Visual")]
+    [SerializeField] private GameObject pickaxeVisual;
 
-    private void Awake()
+    /// <summary>
+    /// Equips a new pickaxe.
+    /// </summary>
+    public void EquipPickaxe(PickaxeData newPickaxe)
     {
-        EquipWoodPickaxe();
+        currentPickaxe = newPickaxe;
+
+        if (pickaxeVisual != null)
+        {
+            pickaxeVisual.SetActive(true);
+        }
     }
 
-    public void EquipWoodPickaxe()
+    /// <summary>
+    /// Returns the mining power of the current pickaxe.
+    /// </summary>
+    public int GetMiningPower()
     {
-        SetActivePickaxe(woodPickaxe);
+        return currentPickaxe != null ? currentPickaxe.MiningPower : 0;
     }
 
-    public void EquipStonePickaxe()
-    {
-        SetActivePickaxe(stonePickaxe);
-    }
-
-    public void EquipIronPickaxe()
-    {
-        SetActivePickaxe(ironPickaxe);
-    }
-
-    private void SetActivePickaxe(PickaxeData pickaxe)
-    {
-        woodPickaxe.gameObject.SetActive(false);
-        stonePickaxe.gameObject.SetActive(false);
-        ironPickaxe.gameObject.SetActive(false);
-
-        pickaxe.gameObject.SetActive(true);
-        currentPickaxe = pickaxe;
-    }
-
+    /// <summary>
+    /// Compatibility method used by PlayerDig.
+    /// </summary>
     public int GetCurrentMiningPower()
     {
-        return currentPickaxe != null ? currentPickaxe.MiningPower : 1;
+        return GetMiningPower();
+    }
+
+    /// <summary>
+    /// Returns the damage of the current pickaxe.
+    /// </summary>
+    public int GetDamage()
+    {
+        return currentPickaxe != null ? currentPickaxe.Damage : 0;
+    }
+
+    /// <summary>
+    /// Returns the currently equipped pickaxe data.
+    /// </summary>
+    public PickaxeData GetCurrentPickaxe()
+    {
+        return currentPickaxe;
     }
 }
