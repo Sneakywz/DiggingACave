@@ -2,6 +2,7 @@ using UnityEngine;
 
 /// <summary>
 /// Classic FPS mouse look.
+/// NOW RESPECTS BOTH PAUSE AND SHOP STATE!
 /// </summary>
 public class CameraController : MonoBehaviour
 {
@@ -20,6 +21,13 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
+        // CORRECTION: Vérifier que le jeu n'est pas en pause ET que le shop n'est pas ouvert
+        if (GameManager.Instance != null && 
+            (GameManager.Instance.IsPaused || GameManager.Instance.IsShopOpen))
+        {
+            return; // Ne rien faire si le jeu est en pause ou si le shop est ouvert
+        }
+
         Look();
     }
 

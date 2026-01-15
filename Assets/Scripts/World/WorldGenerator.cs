@@ -3,6 +3,7 @@ using UnityEngine;
 /// <summary>
 /// Generates the cave world using different block prefabs.
 /// Each block prefab represents a real block type (durability, behavior).
+/// NOW SUPPORTS WORLD REGENERATION!
 /// </summary>
 public class WorldGenerator : MonoBehaviour
 {
@@ -25,6 +26,26 @@ public class WorldGenerator : MonoBehaviour
     private void Start()
     {
         GenerateWorld();
+    }
+
+    /// <summary>
+    /// NEW: Public method to regenerate the entire world
+    /// </summary>
+    public void RegenerateWorld()
+    {
+        Debug.Log("Regenerating world...");
+        
+        // Destroy all existing blocks (children of this GameObject)
+        int childCount = transform.childCount;
+        for (int i = childCount - 1; i >= 0; i--)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+        }
+        
+        // Generate new world
+        GenerateWorld();
+        
+        Debug.Log($"World regenerated! Created {transform.childCount} blocks");
     }
 
     /// <summary>

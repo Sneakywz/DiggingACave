@@ -6,6 +6,7 @@ using TMPro;
 /// <summary>
 /// Handles NPC shop UI for purchasing and equipping pickaxes.
 /// Allows buying new pickaxes and re-equipping owned ones for free.
+/// NOW NOTIFIES GAMEMANAGER WHEN OPEN/CLOSED!
 /// </summary>
 public class ShopUI : MonoBehaviour
 {
@@ -98,6 +99,12 @@ public class ShopUI : MonoBehaviour
     {
         isShopOpen = !isShopOpen;
         shopPanel.SetActive(isShopOpen);
+        
+        // NOUVEAU: Notifier le GameManager
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.SetShopOpen(isShopOpen);
+        }
         
         if (isShopOpen)
         {

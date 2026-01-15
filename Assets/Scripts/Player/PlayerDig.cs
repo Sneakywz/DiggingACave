@@ -2,6 +2,7 @@ using UnityEngine;
 
 /// <summary>
 /// Handles block mining using raycasting from the player camera.
+/// NOW RESPECTS BOTH PAUSE AND SHOP STATE!
 /// </summary>
 public class PlayerDig : MonoBehaviour
 {
@@ -21,6 +22,13 @@ public class PlayerDig : MonoBehaviour
 
     private void Update()
     {
+        // CORRECTION: Vérifier que le jeu n'est pas en pause ET que le shop n'est pas ouvert
+        if (GameManager.Instance != null && 
+            (GameManager.Instance.IsPaused || GameManager.Instance.IsShopOpen))
+        {
+            return; // Ne rien faire si le jeu est en pause ou si le shop est ouvert
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             TryDig();
