@@ -15,6 +15,6 @@ MonoBehaviour:
   damage: 2
   miningPower: 2
   pickaxeName: Stone Pickaxe
-  pickaxeIcon: {fileID: 0}
-  coinPrice: 0
-  stonePrice: 50
+  pickaxeIcon: {fileID: 21300000, guid: ad5450a3a9dcd9b4d96c123854ca592a, type: 3}
+  coinPrice: 50
+  stonePrice: 0

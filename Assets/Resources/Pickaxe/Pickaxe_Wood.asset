@@ -15,6 +15,6 @@ MonoBehaviour:
   damage: 1
   miningPower: 1
   pickaxeName: Wood Pickaxe
-  pickaxeIcon: {fileID: 0}
+  pickaxeIcon: {fileID: 21300000, guid: abf2e1278776d2e489a61e5d9e69e4fe, type: 3}
   coinPrice: 0
   stonePrice: 0

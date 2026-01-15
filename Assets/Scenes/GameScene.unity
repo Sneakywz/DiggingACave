@@ -1142,38 +1142,22 @@ PrefabInstance:
       addedObject: {fileID: 452300779}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a67721dbfe53bfd4b8f4cf790c26cd02, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 452300778}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a67721dbfe53bfd4b8f4cf790c26cd02, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 452300782}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a67721dbfe53bfd4b8f4cf790c26cd02, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 452300781}
+      addedObject: {fileID: 452300784}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a67721dbfe53bfd4b8f4cf790c26cd02, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 452300786}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a67721dbfe53bfd4b8f4cf790c26cd02, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 452300785}
   m_SourcePrefab: {fileID: 100100000, guid: a67721dbfe53bfd4b8f4cf790c26cd02, type: 3}
 --- !u!1 &452300776 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a67721dbfe53bfd4b8f4cf790c26cd02, type: 3}
   m_PrefabInstance: {fileID: 387324305}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &452300778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 452300776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 509eafc8348c4ad583d3b3a6ded867c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCRandomMovement
-  moveSpeed: 2
-  wanderRadius: 10
-  minWaitTime: 2
-  maxWaitTime: 5
-  rotationSpeed: 5
-  stuckCheckDistance: 0.5
-  stuckTimeout: 3
 --- !u!136 &452300779
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1224,21 +1208,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &452300781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 452300776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7709a983d259422db94c1ae211a3e896, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCAnimationController
-  sitAfterSeconds: 10
-  emoteChance: 0.1
-  emoteCheckInterval: 5
 --- !u!95 &452300782
 Animator:
   serializedVersion: 7
@@ -1261,6 +1230,62 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!195 &452300784
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452300776}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &452300785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452300776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 509eafc8348c4ad583d3b3a6ded867c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCRandomMovement
+  moveSpeed: 2
+  wanderRadius: 10
+  minWaitTime: 2
+  maxWaitTime: 5
+  rotationSpeed: 5
+  stuckCheckDistance: 0.5
+  stuckTimeout: 3
+--- !u!114 &452300786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452300776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7709a983d259422db94c1ae211a3e896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCAnimationController
+  sitAfterSeconds: 10
+  emoteChance: 0.1
+  emoteCheckInterval: 5
 --- !u!4 &503949656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4489389889083661909, guid: 01a7c9bdc487171409873639ee291c03, type: 3}
@@ -4745,8 +4770,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b90f3ecac18594fb15fab3748af4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  coins: 0
-  stones: 1000
+  coins: 500000
+  stones: 0
   availablePickaxes:
   - {fileID: 11400000, guid: e81b9c7e4c48f584d894da2af2191dd9, type: 2}
   - {fileID: 11400000, guid: 3e6bec8116542da40a0315a2293d4b0f, type: 2}
