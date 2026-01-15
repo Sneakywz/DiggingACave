@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 55a87cbc83fe7384b88d79e21b399c7f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - blockPrefab: {fileID: 4754499978366164530, guid: 73ffff828b055a545b87fc101d52290e, type: 3}
+  - grassMaterial: {fileID: 2100000, guid: 187dc23dc0f2d2841a0403922a4451ff, type: 2}
+  - dirtMaterial: {fileID: 2100000, guid: 645844c68c757c14a85ea3be1b1ffe8a, type: 2}
+  - stoneMaterial: {fileID: 2100000, guid: 3ab4801af24e8e04da7a3c2ac3fcc906, type: 2}
+  - rockMaterial: {fileID: 2100000, guid: 3c921ed4f626f6f45949afa041ec0440, type: 2}
+  - bedrockMaterial: {fileID: 2100000, guid: ab1dcbcd21903764695328d0b2716190, type: 2}
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: eaf240c62ed319e4b90bd039215aa7dd, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
